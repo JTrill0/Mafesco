@@ -1,0 +1,412 @@
+/*==================================================
+    FrostFlow
+    Smart Ice Factory Management System
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --primary:#0ea5e9;
+    --secondary:#0369a1;
+    --light:#e0f2fe;
+    --background:#f8fbff;
+    --white:#ffffff;
+    --dark:#1e293b;
+    --gray:#64748b;
+    --shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #0ea5e9,
+        #38bdf8,
+        #7dd3fc,
+        #dbeafe
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+
+}
+
+/*=====================================
+Background Animation
+=====================================*/
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/*=====================================
+Navbar
+=====================================*/
+
+.navbar{
+
+    background:rgba(0,0,0,.15);
+    backdrop-filter:blur(12px);
+
+}
+
+.navbar-brand{
+
+    font-size:1.5rem;
+    font-weight:700;
+
+}
+
+.nav-link{
+
+    color:white !important;
+    margin-left:15px;
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    color:#dbeafe !important;
+
+}
+
+/*=====================================
+Login Section
+=====================================*/
+
+.login-section{
+
+    min-height:calc(100vh - 70px);
+
+    display:flex;
+    align-items:center;
+
+    padding:50px 0;
+
+}
+
+/*=====================================
+Hero
+=====================================*/
+
+.hero{
+
+    color:white;
+    padding-right:60px;
+
+}
+
+.hero h1{
+
+    font-size:3.4rem;
+    font-weight:800;
+    line-height:1.2;
+
+}
+
+.hero p{
+
+    font-size:1.1rem;
+
+    opacity:.95;
+
+}
+
+/*=====================================
+Feature Cards
+=====================================*/
+
+.feature-box{
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+.feature-box:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.25);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+
+}
+
+.feature-box i{
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+}
+
+/*=====================================
+Login Card
+=====================================*/
+
+.login-card{
+
+    background:rgba(255,255,255,.92);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*=====================================
+Inputs
+=====================================*/
+
+.form-label{
+
+    font-weight:600;
+
+    color:var(--dark);
+
+}
+
+.input-group-text{
+
+    background:white;
+
+    border-right:none;
+
+}
+
+.form-control{
+
+    border-left:none;
+
+    height:52px;
+
+    font-size:.95rem;
+
+    box-shadow:none !important;
+
+}
+
+.form-control:focus{
+
+    border-color:var(--primary);
+
+}
+
+/*=====================================
+Buttons
+=====================================*/
+
+.btn-primary{
+
+    background:linear-gradient(
+        90deg,
+        #0284c7,
+        #0ea5e9
+    );
+
+    border:none;
+
+    border-radius:12px;
+
+    height:55px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(14,165,233,.35);
+
+}
+
+/*=====================================
+Forgot Password
+=====================================*/
+
+.forgot-link{
+
+    text-decoration:none;
+
+    font-size:.9rem;
+
+    color:var(--secondary);
+
+}
+
+.forgot-link:hover{
+
+    color:var(--primary);
+
+}
+
+/*=====================================
+Footer
+=====================================*/
+
+footer{
+
+    text-align:center;
+
+    color:white;
+
+    padding:18px;
+
+    font-size:.9rem;
+
+}
+
+/*=====================================
+Snow Icon
+=====================================*/
+
+.display-2{
+
+    color:var(--primary);
+
+    animation:rotateSnow 10s linear infinite;
+
+}
+
+@keyframes rotateSnow{
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/*=====================================
+Responsive
+=====================================*/
+
+@media(max-width:992px){
+
+.hero{
+
+padding:20px;
+
+text-align:center;
+
+margin-bottom:40px;
+
+}
+
+.hero h1{
+
+font-size:2.5rem;
+
+}
+
+.login-card{
+
+margin:auto;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+display:none;
+
+}
+
+.login-card{
+
+padding:30px;
+
+}
+
+.navbar-brand{
+
+font-size:1.2rem;
+
+}
+
+}

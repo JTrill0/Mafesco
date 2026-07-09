@@ -1,0 +1,204 @@
+
+/*==========================================================
+ FrostFlow Analytics
+ analytics.js - Part A
+==========================================================*/
+
+let salesChart,inventoryChart,customerChart,productionChart;
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    initializeAnalytics();
+
+});
+
+function initializeAnalytics(){
+
+    initializeCharts();
+    loadInsights();
+    loadDecisionHistory();
+    bindEvents();
+
+}
+
+function bindEvents(){
+
+    document.getElementById("btnSend")?.addEventListener("click",sendPrompt);
+
+    document.getElementById("txtPrompt")?.addEventListener("keypress",e=>{
+        if(e.key==="Enter") sendPrompt();
+    });
+
+}
+
+function initializeCharts(){
+
+    salesChart=createLineChart("salesTrendChart","Sales Trend",[120,180,160,220,260,300]);
+    inventoryChart=createDoughnutChart("inventoryChart",
+        ["Tube","Cube","Block"],[52,28,20]);
+    customerChart=createBarChart("customerChart",
+        ["ABC","XYZ","SeaFood","Hotel"],[320,280,210,150]);
+    productionChart=createLineChart("productionChart",
+        "Production",[420,500,610,700,760,820]);
+
+}
+
+function createLineChart(id,label,data){
+
+    const ctx=document.getElementById(id);
+    if(!ctx) return null;
+
+    return new Chart(ctx,{
+        type:"line",
+        data:{
+            labels:["Mon","Tue","Wed","Thu","Fri","Sat"],
+            datasets:[{label:label,data:data,fill:false}]
+        },
+        options:{responsive:true,maintainAspectRatio:false}
+    });
+
+}
+
+function createBarChart(id,labels,data){
+
+    const ctx=document.getElementById(id);
+    if(!ctx) return null;
+
+    return new Chart(ctx,{
+        type:"bar",
+        data:{labels:labels,datasets:[{data:data}]},
+        options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+
+}
+
+function createDoughnutChart(id,labels,data){
+
+    const ctx=document.getElementById(id);
+    if(!ctx) return null;
+
+    return new Chart(ctx,{
+        type:"doughnut",
+        data:{labels:labels,datasets:[{data:data}]},
+        options:{responsive:true}
+    });
+
+}
+
+function loadInsights(){
+
+    const ul=document.getElementById("aiInsightList");
+    if(!ul) return;
+
+    const insights=[
+        "Tube Ice demand increased by 12% this week.",
+        "Factory B has the highest production efficiency.",
+        "Plastic bags should be reordered within 3 days.",
+        "Customer ABC Seafood contributed the highest revenue."
+    ];
+
+    ul.innerHTML="";
+
+    insights.forEach(i=>{
+        ul.innerHTML+=`<li class="list-group-item">${i}</li>`;
+    });
+
+}
+
+function loadDecisionHistory(){
+
+    const tbl=document.getElementById("tblAIDecisions");
+    if(!tbl) return;
+
+    const rows=[
+        ["08:15","Inventory","Increase Tube Ice","+High"],
+        ["09:40","Production","Run Machine B","+Medium"],
+        ["10:25","Sales","Prioritize ABC Seafood","+High"],
+        ["11:10","Inventory","Reorder plastic bags","+Medium"]
+    ];
+
+    tbl.innerHTML="";
+
+    rows.forEach(r=>{
+        tbl.innerHTML+=`
+        <tr>
+        <td>${r[0]}</td>
+        <td>${r[1]}</td>
+        <td>${r[2]}</td>
+        <td>${r[3]}</td>
+        </tr>`;
+    });
+
+}
+
+
+
+/*==========================================================
+ FrostFlow Analytics
+ analytics.js - Part B
+==========================================================*/
+
+function sendPrompt(){
+
+    const txt=document.getElementById("txtPrompt");
+    const chat=document.getElementById("chatWindow");
+
+    if(!txt||!chat) return;
+
+    const question=txt.value.trim();
+    if(question==="") return;
+
+    chat.innerHTML+=`
+    <div class="chat-user">
+      <div class="bubble">${question}</div>
+    </div>`;
+
+    const answer=generateAIResponse(question);
+
+    setTimeout(()=>{
+
+        chat.innerHTML+=`
+        <div class="chat-ai">
+          <div class="bubble">${answer}</div>
+        </div>`;
+
+        chat.scrollTop=chat.scrollHeight;
+
+    },500);
+
+    txt.value="";
+
+}
+
+function generateAIResponse(q){
+
+    q=q.toLowerCase();
+
+    if(q.includes("produce")||q.includes("production"))
+        return "Based on current trends, increase Tube Ice production by approximately 15% tomorrow.";
+
+    if(q.includes("customer"))
+        return "ABC Seafood is currently the highest-volume customer based on recent sales.";
+
+    if(q.includes("inventory"))
+        return "Inventory health remains at 95%. Plastic bags will require replenishment within three days.";
+
+    if(q.includes("machine"))
+        return "Machine B currently has the highest utilization and efficiency.";
+
+    if(q.includes("sales"))
+        return "Sales have shown a positive trend throughout the week, driven primarily by Tube Ice demand.";
+
+    return "Based on the available operational data, no significant risks are detected. Continue monitoring production, inventory, and sales.";
+
+}
+
+setInterval(()=>{
+
+    document.getElementById("lblForecast").innerHTML=
+    "+"+(10+Math.floor(Math.random()*8))+"%";
+
+    document.getElementById("lblConfidence").innerHTML=
+    (95+Math.floor(Math.random()*5))+"%";
+
+},8000);

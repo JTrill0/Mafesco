@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sales Management | FrostFlow</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/sales.css">
+</head>
+<body>
+
+<div class="sidebar">
+<div class="logo">
+<i class="bi bi-snow2"></i>
+<h3>FrostFlow</h3>
+</div>
+	<ul>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/dashboard.html" ><i class='bi bi-grid-fill'></i><span> Dashboard</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/inventory.html"><i class='bi bi-box-seam'></i><span> Inventory</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/production.html"><i class='bi bi-gear-wide-connected'></i><span> Production Monitoring</span></a></li>
+	    <li class='active'><a class="nav-link" href="C:/IceFactorySystem/sales.html"><i class='bi bi-cart-fill'></i><span> Sales</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/deliveries.html"><i class='bi bi-truck'></i><span> Deliveries</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/customers.html"><i class='bi bi-people-fill'></i><span> Customers</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/analytics.html"><i class='bi bi-robot'></i><span> AI Analytics</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/reports.html"><i class='bi bi-file-earmark-bar-graph'></i><span> Reports</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/settings.html"><i class='bi bi-gear-fill'></i><span> Settings</span></a></li>
+	    <li><a class="nav-link" href="C:/IceFactorySystem/login.html"><i class='bi bi-box-arrow-left'></i><span> Logout</span></a></li></a>
+	</ul>
+</div>
+
+<div class="main">
+
+<div class="topbar">
+<h4>Sales Management</h4>
+<div class="top-right">
+<button class="btn btn-light"><i class="bi bi-download"></i> Export</button>
+</div>
+</div>
+
+<div class="row mt-4">
+<div class="col-lg-3"><div class="kpi-card"><h6>Today's Sales</h6><h2>₱85,250</h2><p>Revenue</p></div></div>
+<div class="col-lg-3"><div class="kpi-card"><h6>Transactions</h6><h2>152</h2><p>Completed Today</p></div></div>
+<div class="col-lg-3"><div class="kpi-card"><h6>Average Sale</h6><h2>₱561</h2><p>Per Transaction</p></div></div>
+<div class="col-lg-3"><div class="kpi-card"><h6>Collectibles</h6><h2>₱18,500</h2><p>Outstanding</p></div></div>
+</div>
+
+<div class="card mt-4">
+<div class="card-header">Sales Filters</div>
+<div class="card-body">
+<div class="row g-3">
+<div class="col-md-2"><input class="form-control" type="date"></div>
+<div class="col-md-2"><select class="form-select"><option>All Factories</option><option>Factory A</option><option>Factory B</option></select></div>
+<div class="col-md-2"><select class="form-select"><option>All Payments</option><option>Cash</option><option>Credit</option></select></div>
+<div class="col-md-2"><select class="form-select"><option>All Status</option><option>Completed</option><option>Collectible</option><option>Delivered</option></select></div>
+<div class="col-md-4"><input class="form-control" placeholder="Search Invoice / Customer / Cashier"></div>
+</div>
+</div>
+</div>
+
+<div class="card mt-4">
+<div class="card-header d-flex justify-content-between">
+<span>Sales Transactions</span>
+<button class="btn btn-primary btn-sm">+ New Transaction</button>
+</div>
+
+<div class="table-responsive">
+<table class="table table-hover align-middle">
+<thead>
+<tr>
+<th>Invoice</th>
+<th>Date & Time</th>
+<th>Customer</th>
+<th>Cashier</th>
+<th>Factory</th>
+<th>Sales Type</th>
+<th>Payment</th>
+<th>Delivery</th>
+<th>Driver</th>
+<th>Total</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody id="salesTableBody">
+<tr>
+<td>INV-000125</td>
+<td>09 Jul 2026 09:35</td>
+<td>ABC Seafood</td>
+<td>Maria Santos</td>
+<td>Factory A</td>
+<td>Delivery</td>
+<td>Cash</td>
+<td>Yes</td>
+<td>Juan Dela Cruz</td>
+<td>₱2,350.00</td>
+<td><span class="badge bg-success">Delivered</span></td>
+<td><button class="btn btn-sm btn-outline-primary">View</button></td>
+</tr>
+<tr>
+<td>INV-000126</td>
+<td>09 Jul 2026 10:10</td>
+<td>Maria Store</td>
+<td>Peter Ramos</td>
+<td>Factory B</td>
+<td>Pick-up</td>
+<td>Credit</td>
+<td>No</td>
+<td>-</td>
+<td>₱6,200.00</td>
+<td><span class="badge bg-warning text-dark">Collectible</span></td>
+<td><button class="btn btn-sm btn-outline-primary">View</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="row mt-4">
+<div class="col-lg-8">
+<div class="card">
+<div class="card-header">Sales Performance</div>
+<div class="card-body">
+<canvas id="salesChart"></canvas>
+</div>
+</div>
+</div>
+
+<div class="col-lg-4">
+<div class="card mb-3">
+<div class="card-header">Collectibles</div>
+<div class="card-body">
+<table class="table table-sm">
+<tr><th>ABC Seafood</th><td>₱12,500</td></tr>
+<tr><th>Maria Store</th><td>₱6,000</td></tr>
+</table>
+</div>
+</div>
+
+<div class="card">
+<div class="card-header">AI Recommendation</div>
+<div class="card-body">
+<ul id="salesAI">
+<li>Tube Ice sales increased by 18%.</li>
+<li>Factory B has the highest average transaction value.</li>
+<li>Follow up overdue credit accounts this week.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/sales.js"></script>
+
+</div>
+</body>
+</html>

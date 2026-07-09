@@ -1,0 +1,175 @@
+
+/*=================================================
+  FrostFlow Operator Terminal
+=================================================*/
+
+body{
+    background:#f4f7fb;
+}
+
+.kpi-card{
+    background:#fff;
+    border-left:5px solid #0d6efd;
+    border-radius:14px;
+    padding:18px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:.2s;
+}
+.kpi-card:hover{
+    transform:translateY(-3px);
+}
+.kpi-card h6{
+    color:#6c757d;
+    margin-bottom:6px;
+    font-weight:600;
+}
+.kpi-card h2{
+    color:#16324F;
+    font-weight:700;
+}
+
+.card{
+    border:none;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,.08);
+}
+
+.card-header{
+    background:#fff;
+    border-bottom:1px solid #edf2f7;
+    font-weight:700;
+}
+
+.operator-info .badge{
+    margin-left:6px;
+    font-size:.85rem;
+    padding:8px 12px;
+}
+
+.grid-container{
+    display:grid;
+    grid-template-columns:repeat(20,52px);
+    gap:8px;
+    justify-content:center;
+    margin:10px 0;
+}
+
+.grid-box{
+    width:52px;
+    height:52px;
+    border-radius:10px;
+    border:1px solid #d7dee8;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+    background:#fff;
+}
+
+.grid-box:hover{
+    transform:scale(1.05);
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.grid-complete{
+    background:#1E88E5;
+    color:#fff;
+}
+
+.grid-processing{
+    background:#FFC107;
+    color:#222;
+}
+
+.grid-error{
+    background:#E53935;
+    color:#fff;
+}
+
+.grid-standby{
+    background:#fff;
+    color:#333;
+}
+
+.legend{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items:center;
+    margin-top:15px;
+}
+
+.legend-box{
+    width:18px;
+    height:18px;
+    display:inline-block;
+    border-radius:4px;
+    margin-right:6px;
+    border:1px solid #ccc;
+}
+
+.legend-box.complete{background:#1E88E5;}
+.legend-box.processing{background:#FFC107;}
+.legend-box.standby{background:#fff;}
+.legend-box.error{background:#E53935;}
+
+.table-responsive{
+    max-height:320px;
+    overflow:auto;
+}
+
+.table thead th{
+    position:sticky;
+    top:0;
+    background:#f8fbff;
+    white-space:nowrap;
+}
+
+.table tbody tr:hover{
+    background:#f8fbff;
+}
+
+.modal-content{
+    border:none;
+    border-radius:16px;
+}
+
+.modal-header{
+    background:#16324F;
+    color:#fff;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+}
+
+#btnSaveGrid{
+    min-width:130px;
+}
+
+@media(max-width:992px){
+    .grid-container{
+        grid-template-columns:repeat(10,52px);
+    }
+}
+
+@media(max-width:768px){
+    .grid-container{
+        grid-template-columns:repeat(5,52px);
+    }
+
+    .operator-info{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        align-items:flex-end;
+    }
+
+    .legend{
+        gap:10px;
+        font-size:.9rem;
+    }
+}

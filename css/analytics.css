@@ -1,0 +1,191 @@
+
+/*==========================================================
+ FrostFlow AI Analytics Module
+==========================================================*/
+
+/* KPI Cards */
+.kpi-card{
+    border-left:5px solid #6f42c1;
+    transition:.25s;
+}
+
+.kpi-card:hover{
+    transform:translateY(-3px);
+}
+
+/* Charts */
+.chart-container{
+    position:relative;
+    height:300px;
+}
+
+.card{
+    border:none;
+    border-radius:14px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.card-header{
+    background:#fff;
+    font-weight:600;
+    border-bottom:1px solid #edf2f7;
+}
+
+/* AI Insight List */
+.list-group-item{
+    border:none;
+    border-bottom:1px solid #eef2f6;
+    padding:14px;
+    transition:.25s;
+}
+
+.list-group-item:hover{
+    background:#f7fbff;
+}
+
+/* Recommendation Cards */
+.alert{
+    border-radius:12px;
+    font-size:.92rem;
+    margin-bottom:12px;
+}
+
+/* AI Chat */
+#chatWindow{
+    background:#fafcff;
+    border:1px solid #dfe6ec !important;
+}
+
+.chat-user{
+    text-align:right;
+    margin-bottom:15px;
+}
+
+.chat-user .bubble{
+    display:inline-block;
+    background:#0d6efd;
+    color:white;
+    padding:10px 15px;
+    border-radius:18px 18px 4px 18px;
+    max-width:80%;
+}
+
+.chat-ai{
+    margin-bottom:15px;
+}
+
+.chat-ai .bubble{
+    display:inline-block;
+    background:#edf3ff;
+    color:#16324F;
+    padding:10px 15px;
+    border-radius:18px 18px 18px 4px;
+    max-width:80%;
+}
+
+/* Input */
+#txtPrompt{
+    border-radius:10px 0 0 10px;
+}
+
+#btnSend{
+    border-radius:0 10px 10px 0;
+}
+
+/* Decision Table */
+.table-responsive{
+    max-height:320px;
+    overflow:auto;
+}
+
+.table thead th{
+    position:sticky;
+    top:0;
+    background:white;
+    z-index:5;
+    font-weight:600;
+}
+
+.table tbody tr{
+    transition:.2s;
+}
+
+.table tbody tr:hover{
+    background:#f5f9ff;
+}
+
+/* Confidence Colors */
+.high-confidence{
+    color:#198754;
+    font-weight:600;
+}
+
+.medium-confidence{
+    color:#ffc107;
+    font-weight:600;
+}
+
+.low-confidence{
+    color:#dc3545;
+    font-weight:600;
+}
+
+/* AI Panel */
+#recommendationCards .alert{
+    transition:.25s;
+}
+
+#recommendationCards .alert:hover{
+    transform:translateX(4px);
+}
+
+/* Buttons */
+.btn-primary{
+    font-weight:600;
+}
+
+/* Responsive */
+@media(max-width:992px){
+
+.chart-container{
+    height:260px;
+}
+
+#chatWindow{
+    height:260px !important;
+}
+
+}
+
+@media(max-width:768px){
+
+.chart-container{
+    height:230px;
+}
+
+.kpi-card h2{
+    font-size:1.5rem;
+}
+
+#txtPrompt{
+    font-size:.9rem;
+}
+
+}
+
+@media(max-width:576px){
+
+.chart-container{
+    height:200px;
+}
+
+.table{
+    font-size:.82rem;
+}
+
+.chat-user .bubble,
+.chat-ai .bubble{
+    max-width:95%;
+}
+
+}

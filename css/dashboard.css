@@ -1,0 +1,593 @@
+/*========================================================
+    FrostFlow Dashboard
+    Smart Ice Factory Management System
+==========================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+    --sidebar:#16324F;
+    --sidebarHover:#21476d;
+
+    --primary:#2196F3;
+    --secondary:#03A9F4;
+
+    --background:#F4F8FB;
+
+    --white:#ffffff;
+
+    --border:#dfe6ec;
+
+    --text:#243447;
+
+    --success:#2196F3;
+
+    --warning:#FFC107;
+
+    --danger:#E53935;
+
+    --shadow:
+        0 10px 25px rgba(0,0,0,.08);
+
+}
+
+/*================================================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+
+    background:var(--background);
+
+    font-family:Poppins,sans-serif;
+
+    color:var(--text);
+
+}
+
+/*================================================
+SIDEBAR
+================================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:260px;
+
+    height:100vh;
+
+    background:var(--sidebar);
+
+    color:white;
+
+    box-shadow:var(--shadow);
+
+    z-index:999;
+
+}
+
+.logo{
+
+    height:80px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.logo i{
+
+    font-size:35px;
+
+    color:#6EC6FF;
+
+}
+
+.logo h3{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+/*================================================*/
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:20px 0;
+
+}
+
+.sidebar li{
+
+    padding:16px 30px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.sidebar li:hover{
+
+    background:var(--sidebarHover);
+
+}
+
+.sidebar li.active{
+
+    background:var(--primary);
+
+}
+
+.sidebar li i{
+
+    font-size:18px;
+
+}
+
+/*================================================
+MAIN
+================================================*/
+
+.main{
+
+    margin-left:260px;
+
+    padding:25px;
+
+}
+
+/*================================================
+TOP BAR
+================================================*/
+
+.topbar{
+
+    height:75px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:0 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.top-right{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+/*================================================
+KPI
+================================================*/
+
+.kpi-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.kpi-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.kpi-card h6{
+
+    color:#777;
+
+}
+
+.kpi-card h2{
+
+    margin-top:10px;
+
+    font-weight:700;
+
+}
+
+/*================================================
+CARD
+================================================*/
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.card-header{
+
+    background:white;
+
+    border-bottom:1px solid var(--border);
+
+    font-weight:600;
+
+}
+
+/*================================================
+PRODUCTION GRID
+================================================*/
+
+#productionGrid{
+
+    display:grid;
+
+    grid-template-columns:repeat(10,1fr);
+
+    gap:12px;
+
+}
+
+/*================================================*/
+
+.ice-grid{
+
+    height:65px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:2px solid #ddd;
+
+}
+
+/*================================================*/
+
+.ice-grid:hover{
+
+    transform:scale(1.08);
+
+}
+
+/*================================================*/
+
+.completed{
+
+    background:#2196F3;
+
+    color:white;
+
+    border:none;
+
+}
+
+/*================================================*/
+
+.processing{
+
+    background:#FFC107;
+
+}
+
+/*================================================*/
+
+.standby{
+
+    background:white;
+
+}
+
+/*================================================*/
+
+.error{
+
+    background:#E53935;
+
+    color:white;
+
+}
+
+/*================================================
+LEGEND
+================================================*/
+
+.legend{
+
+    display:flex;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.legend div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.legend-box{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:5px;
+
+    border:1px solid #ccc;
+
+}
+
+.legend-box.completed{
+
+    background:#2196F3;
+
+}
+
+.legend-box.processing{
+
+    background:#FFC107;
+
+}
+
+.legend-box.standby{
+
+    background:white;
+
+}
+
+.legend-box.error{
+
+    background:#E53935;
+
+}
+
+/*================================================
+AI CARD
+================================================*/
+
+.card h6{
+
+    font-weight:600;
+
+}
+
+.card p{
+
+    margin-bottom:10px;
+
+}
+
+/*================================================
+TABLE
+================================================*/
+
+.table{
+
+    margin:0;
+
+}
+
+.table thead{
+
+    background:#f7f9fc;
+
+}
+
+/*================================================
+BUTTONS
+================================================*/
+
+.btn{
+
+    border-radius:10px;
+
+}
+
+/*================================================
+PROGRESS
+================================================*/
+
+.progress{
+
+    height:25px;
+
+    border-radius:20px;
+
+}
+
+.progress-bar{
+
+    font-weight:600;
+
+}
+
+/*================================================
+SCROLLBAR
+================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2196F3;
+
+    border-radius:20px;
+
+}
+
+/*================================================
+RESPONSIVE
+================================================*/
+
+@media(max-width:992px){
+
+.sidebar{
+
+    width:80px;
+
+}
+
+.logo h3{
+
+    display:none;
+
+}
+
+.sidebar li{
+
+    justify-content:center;
+
+    padding:18px;
+
+}
+
+.sidebar li span{
+
+    display:none;
+
+}
+
+.main{
+
+    margin-left:80px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.main{
+
+    margin-left:0;
+
+}
+
+.sidebar{
+
+    left:-260px;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px;
+
+}
+
+.top-right{
+
+    margin-top:15px;
+
+    width:100%;
+
+    justify-content:space-between;
+
+}
+
+#productionGrid{
+
+    grid-template-columns:repeat(5,1fr);
+
+}
+
+.kpi-card{
+
+    margin-bottom:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+#productionGrid{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+.ice-grid{
+
+    height:55px;
+
+    font-size:14px;
+
+}
+
+}

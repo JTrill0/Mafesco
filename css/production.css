@@ -1,0 +1,173 @@
+
+/*==========================================================
+ FrostFlow Production Module
+==========================================================*/
+
+/* Toolbar */
+.inventory-toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.inventory-toolbar .btn{
+    min-width:160px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+/* KPI */
+.kpi-card{
+    border-left:5px solid #2196F3;
+}
+
+/* Production Grid */
+#productionGrid{
+    display:grid;
+    grid-template-columns:repeat(20,1fr);
+    gap:10px;
+    margin-top:20px;
+}
+
+.ice-cell{
+    height:60px;
+    border-radius:10px;
+    border:2px solid #d9e2ec;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:600;
+    cursor:pointer;
+    transition:.25s;
+    user-select:none;
+    background:#fff;
+}
+
+.ice-cell:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+
+.ice-cell.completed{
+    background:#2196F3;
+    color:#fff;
+    border-color:#2196F3;
+}
+
+.ice-cell.processing{
+    background:#FFC107;
+    color:#222;
+    border-color:#FFC107;
+}
+
+.ice-cell.standby{
+    background:#fff;
+    color:#555;
+}
+
+.ice-cell.error{
+    background:#dc3545;
+    color:#fff;
+    border-color:#dc3545;
+}
+
+/* Progress */
+.progress{
+    height:26px;
+    border-radius:20px;
+}
+
+.progress-bar{
+    font-weight:600;
+}
+
+/* Summary */
+.table th{
+    width:45%;
+    color:#495057;
+}
+
+.table td{
+    font-weight:500;
+}
+
+/* AI */
+#txtAIRecommendation{
+    line-height:1.8;
+    font-size:.95rem;
+}
+
+/* Modal */
+.modal-content{
+    border:none;
+    border-radius:16px;
+}
+
+.modal-header{
+    background:#16324F;
+    color:#fff;
+}
+
+.modal-title{
+    font-weight:600;
+}
+
+/* Legend badges */
+.badge{
+    padding:8px 12px;
+    font-size:.8rem;
+}
+
+/* Card animation */
+.card,
+.kpi-card{
+    transition:.25s;
+}
+
+.card:hover,
+.kpi-card:hover{
+    transform:translateY(-3px);
+}
+
+/* Responsive */
+@media(max-width:1200px){
+#productionGrid{
+    grid-template-columns:repeat(10,1fr);
+}
+}
+
+@media(max-width:768px){
+
+.inventory-toolbar{
+    flex-direction:column;
+}
+
+.inventory-toolbar .btn{
+    width:100%;
+}
+
+#productionGrid{
+    grid-template-columns:repeat(5,1fr);
+}
+
+.ice-cell{
+    height:55px;
+    font-size:.85rem;
+}
+
+}
+
+@media(max-width:576px){
+
+#productionGrid{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.kpi-card h2{
+    font-size:1.6rem;
+}
+
+}
+
+
+

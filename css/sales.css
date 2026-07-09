@@ -1,0 +1,108 @@
+
+/*=========================================================
+ FrostFlow Sales Management
+=========================================================*/
+
+.kpi-card{
+    background:#fff;
+    border-left:5px solid #198754;
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 4px 14px rgba(0,0,0,.08);
+    transition:.25s;
+}
+.kpi-card:hover{
+    transform:translateY(-3px);
+}
+.kpi-card h6{
+    color:#6c757d;
+    font-weight:600;
+}
+.kpi-card h2{
+    color:#16324F;
+    font-weight:700;
+}
+
+.card{
+    border:none;
+    border-radius:16px;
+    box-shadow:0 5px 16px rgba(0,0,0,.08);
+}
+.card-header{
+    background:#fff;
+    font-weight:700;
+    border-bottom:1px solid #edf2f7;
+}
+
+.form-control,
+.form-select{
+    min-height:44px;
+    border-radius:10px;
+}
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 .15rem rgba(13,110,253,.15);
+}
+
+.table-responsive{
+    max-height:520px;
+    overflow:auto;
+}
+.table thead th{
+    position:sticky;
+    top:0;
+    background:#f8fbff;
+    z-index:5;
+    white-space:nowrap;
+    font-weight:700;
+}
+.table tbody td{
+    white-space:nowrap;
+    vertical-align:middle;
+}
+.table tbody tr:hover{
+    background:#f8fbff;
+}
+
+.badge{
+    font-size:.78rem;
+    padding:7px 10px;
+}
+
+.btn-primary,
+.btn-outline-primary{
+    border-radius:10px;
+    font-weight:600;
+}
+
+#salesAI{
+    margin:0;
+    padding-left:18px;
+}
+#salesAI li{
+    margin-bottom:12px;
+    line-height:1.5;
+}
+
+canvas{
+    width:100%!important;
+    height:340px!important;
+}
+
+@media(max-width:992px){
+    canvas{height:280px!important;}
+    .kpi-card{margin-bottom:15px;}
+}
+
+@media(max-width:768px){
+    .table{font-size:.84rem;}
+    .card-body{padding:15px;}
+    canvas{height:240px!important;}
+}
+
+@media(max-width:576px){
+    .kpi-card h2{font-size:1.5rem;}
+    .btn{width:100%;}
+    .table{font-size:.78rem;}
+}

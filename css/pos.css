@@ -1,0 +1,157 @@
+
+/*==========================================================
+ FrostFlow POS Module
+==========================================================*/
+
+.product-card{
+    background:#fff;
+    border:1px solid #e6edf5;
+    border-radius:16px;
+    padding:20px;
+    text-align:center;
+    transition:.25s;
+    height:100%;
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 24px rgba(0,0,0,.12);
+}
+
+.product-card h5{
+    font-weight:700;
+    color:#16324F;
+    margin-bottom:10px;
+}
+
+.product-card h4{
+    color:#0d6efd;
+    font-weight:700;
+    margin:15px 0;
+}
+
+.product-card .btn{
+    border-radius:10px;
+    font-weight:600;
+}
+
+.card{
+    border:none;
+    border-radius:16px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+}
+
+.card-header{
+    background:#fff;
+    font-weight:700;
+    border-bottom:1px solid #edf2f7;
+}
+
+.form-control,
+.form-select{
+    border-radius:10px;
+    min-height:44px;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 0 .15rem rgba(13,110,253,.15);
+}
+
+.table thead th{
+    background:#f8fbff;
+    font-weight:600;
+    position:sticky;
+    top:0;
+}
+
+.table tbody tr:hover{
+    background:#f7fbff;
+}
+
+.table-responsive{
+    max-height:260px;
+    overflow:auto;
+}
+
+#lblGrandTotal{
+    color:#198754;
+    font-size:1.7rem;
+}
+
+.d-flex.justify-content-between{
+    margin-bottom:8px;
+}
+
+#btnCheckout{
+    font-weight:700;
+    border-radius:10px;
+    min-height:48px;
+}
+
+#btnReceipt,
+#btnClear{
+    border-radius:10px;
+    min-height:44px;
+}
+
+label{
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.topbar h4{
+    font-weight:700;
+}
+
+@media(max-width:992px){
+
+.product-card{
+    margin-bottom:15px;
+}
+
+}
+
+@media(max-width:768px){
+
+#lblGrandTotal{
+    font-size:1.4rem;
+}
+
+.product-card{
+    padding:16px;
+}
+
+.table{
+    font-size:.88rem;
+}
+
+}
+
+@media(max-width:576px){
+
+.product-card h4{
+    font-size:1.3rem;
+}
+
+.product-card h5{
+    font-size:1rem;
+}
+
+.card-body{
+    padding:15px;
+}
+
+.table{
+    font-size:.8rem;
+}
+
+#btnCheckout,
+#btnReceipt,
+#btnClear{
+    width:100%;
+}
+
+}

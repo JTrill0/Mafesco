@@ -1,0 +1,228 @@
+
+/*==========================================================
+ FrostFlow Inventory Module
+==========================================================*/
+
+/* Toolbar */
+.inventory-toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.inventory-toolbar .btn{
+    min-width:160px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+/* KPI tweaks */
+.kpi-card{
+    border-left:5px solid #2196F3;
+}
+
+/* Search */
+.card .form-control,
+.card .form-select{
+    min-height:45px;
+    border-radius:10px;
+}
+
+.card .form-control:focus,
+.card .form-select:focus{
+    border-color:#2196F3;
+    box-shadow:0 0 0 .15rem rgba(33,150,243,.15);
+}
+
+/* Table */
+.table-responsive{
+    max-height:540px;
+    overflow:auto;
+}
+
+.table thead th{
+    position:sticky;
+    top:0;
+    background:#f8fbff;
+    z-index:2;
+    white-space:nowrap;
+    font-weight:600;
+    border-bottom:2px solid #dfe6ec;
+}
+
+.table tbody tr{
+    transition:.25s;
+}
+
+.table tbody tr:hover{
+    background:#eef7ff;
+}
+
+/* Product */
+.product-icon{
+    width:42px;
+    height:42px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#eaf6ff;
+    color:#2196F3;
+    border-radius:10px;
+    font-size:22px;
+}
+
+/* Status */
+.badge-status{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:.78rem;
+    font-weight:600;
+}
+
+.status-fresh{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status-released{
+    background:#dbeafe;
+    color:#1d4ed8;
+}
+
+.status-warning{
+    background:#fef3c7;
+    color:#92400e;
+}
+
+.status-expired{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+/* Action buttons */
+.action-btn{
+    width:34px;
+    height:34px;
+    border:none;
+    border-radius:8px;
+    transition:.25s;
+    margin-right:4px;
+}
+
+.action-btn:hover{
+    transform:scale(1.08);
+}
+
+.view-btn{
+    background:#2196F3;
+    color:#fff;
+}
+
+.edit-btn{
+    background:#FFC107;
+    color:#222;
+}
+
+.delete-btn{
+    background:#ef4444;
+    color:#fff;
+}
+
+/* AI Card */
+.ai-box{
+    line-height:1.8;
+}
+
+.ai-box h6{
+    font-weight:700;
+    color:#16324F;
+}
+
+/* Chart */
+.chart-container{
+    height:340px;
+    position:relative;
+}
+
+/* Modal */
+.modal-content{
+    border-radius:16px;
+    border:none;
+}
+
+.modal-header{
+    background:#16324F;
+    color:#fff;
+}
+
+.modal-title{
+    font-weight:600;
+}
+
+/* Table row selected */
+.table-primary{
+    --bs-table-bg:#dbeafe;
+}
+
+/* Toast */
+.alert.position-fixed{
+    border-radius:10px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* Responsive */
+@media(max-width:992px){
+
+.inventory-toolbar .btn{
+    flex:1 1 calc(50% - 12px);
+}
+
+.chart-container{
+    height:280px;
+}
+
+}
+
+@media(max-width:768px){
+
+.inventory-toolbar{
+    flex-direction:column;
+}
+
+.inventory-toolbar .btn{
+    width:100%;
+}
+
+.table{
+    font-size:.82rem;
+}
+
+.chart-container{
+    height:250px;
+}
+
+}
+
+@media(max-width:576px){
+
+.kpi-card h2{
+    font-size:1.6rem;
+}
+
+.table{
+    font-size:.75rem;
+}
+
+.product-icon{
+    width:34px;
+    height:34px;
+    font-size:18px;
+}
+
+.action-btn{
+    width:30px;
+    height:30px;
+}
+
+}
